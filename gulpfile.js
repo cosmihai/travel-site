@@ -1,10 +1,12 @@
-'use strict'
-const gulp = require('gulp');
+require('./gulp/tasks/styles');
+require('./gulp/tasks/watch');
 
-gulp.task('default', function() {
-  console.log('this is a gulp task');
-});
 
-gulp.task('html', function() {
-  console.log('this is the html task')
-});
+
+
+
+
+
+
+
+
