@@ -4,6 +4,7 @@ var rename = require('gulp-rename');
 var del = require('del');
 
 var config = {
+
   mode: {
     css: {
       sprite: 'sprite.svg',
@@ -26,6 +27,7 @@ gulp.task('createSprite',['beginClean'], function() {
     .pipe(gulp.dest('./app/temp/sprite'));
 });
 
+
 gulp.task('copySpriteGraphic',['createSprite'], function() {
   return gulp.src('./app/temp/sprite/css/**/*.svg')
     .pipe(gulp.dest('./app/assets/images/sprites'));
@@ -41,4 +43,4 @@ gulp.task('endClean',['copySpriteGraphic', 'copySpriteCSS'], function() {
   return del('./app/temp/sprite');
 })
 
-gulp.task('icons', ['beginClean','createSprite','copySpriteGraphic', 'copySpriteCSS', 'endClean']);
+gulp.task('icons', ['beginClean','createSprite', 'copySpriteGraphic', 'copySpriteCSS', 'endClean']);
